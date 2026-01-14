@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H.I.C - Contact</title>
+    <link rel="icon" href="offical.png" type="image/png">
+
+    <style>
+        /* Reset & body */
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'OCR A', monospace;
+            background-color: rgb(91, 101, 93);
+            position: relative;
+            background-image: url('Screenshot 2026-01-12 142559.png');
+            background-size: cover;
+            background-repeat: repeat;
+            background-position: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            background-blend-mode: darken;
+        }
+
+        /* Sticky Navbar */
+        .top {
+            position: sticky;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            height: 80px;
+            font-weight: 700;
+            background-color: #0B1F3F;
+        }
+
+        /* Herobrine logo + text */
+        .herobrine {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #ffffff;
+            text-shadow: 1px 1px 2px #000000;
+        }
+
+        .herobrine img {
+            height: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .herobrine img:hover {
+            filter: brightness(100%);
+            height: 55px;
+        }
+
+        .top ul {
+            display: flex;
+            list-style: none;
+            margin-left: auto;
+            gap: 20px;
+            padding: 0;
+        }
+
+        .top a.nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px #000000;
+            transition: all 0.3s ease;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 0.8s forwards;
+        }
+
+        .top a.nav-link:hover {
+            color: #000000;
+            text-shadow: 2px 2px 10px #ffffff;
+            transform: translateY(0) scale(1.1);
+        }
+
+        /* Animation delays for links */
+        .top li:nth-child(1) a.nav-link {
+            animation-delay: 0.2s;
+        }
+
+        .top li:nth-child(2) a.nav-link {
+            animation-delay: 0.4s;
+        }
+
+        .top li:nth-child(3) a.nav-link {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .contact h2,
+        .contact h3 {
+            color: white;
+            margin: 0 0 20px 0;
+        }
+
+        .contact img {
+            height: 100px;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .contact img:hover {
+            transform: scale(1.15);
+            filter: brightness(110%);
+        }
+
+        .contact {
+            min-height: calc(100vh - 80px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+            transition: all 0.3s ease;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 1s forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="top">
+        <a href="Index.html" class="herobrine">
+            <img src="offical.png" alt="Herobrine Logo">
+            <span> - H.I.C</span>
+        </a>
+        <ul>
+            <li><a href="Index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="contact">
+        <h2>H.I.C CONTACTS:</h2>
+        <a href="https://scratch.mit.edu/studios/51218455/" class="how">
+            <img src="https://herobrineinvestigationcommunity.my.canva.site/herobrine-investigation-community/_assets/media/6b975490e666863560bd6b5a066a8426.png"
+                alt="Scratch" height="100px">
+        </a>
+
+        <h3>Email for higher ups: jaxbro@student.wcs.k12.in.us</h3>
+        <h3>Email for AmeenaDaCoder: ameenakondah@gmail.com</h3>
+        <h3>Email for blurry_memory: raininghorses2@gmail.com</h3>
+    </main>
+
+</body>
+
+</html>

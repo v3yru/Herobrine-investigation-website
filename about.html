@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H.I.C - About</title>
+    <link rel="icon" href="offical.png" type="image/png">
+
+    <style>
+        /* Reset & body */
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'OCR A', monospace;
+            background-color: rgb(91, 101, 93);
+            position: relative;
+        }
+
+        /* Sticky Navbar */
+        .top {
+            position: sticky;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            height: 80px;
+            font-weight: 700;
+            background-color: #0B1F3F;
+        }
+
+        /* Herobrine logo + text */
+        .herobrine {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #ffffff;
+            text-shadow: 1px 1px 2px #000000;
+        }
+
+        .herobrine img {
+            height: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .herobrine img:hover {
+            filter: brightness(100%);
+            height: 55px;
+        }
+
+        .top ul {
+            display: flex;
+            list-style: none;
+            margin-left: auto;
+            gap: 20px;
+            padding: 0;
+        }
+
+        .top a.nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px #000000;
+            transition: all 0.3s ease;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 0.8s forwards;
+        }
+
+        .top a.nav-link:hover {
+            color: #000000;
+            text-shadow: 2px 2px 10px #ffffff;
+            transform: translateY(0) scale(1.1);
+        }
+
+        /* Animation delays for links */
+        .top li:nth-child(1) a.nav-link {
+            animation-delay: 0.2s;
+        }
+
+        .top li:nth-child(2) a.nav-link {
+            animation-delay: 0.4s;
+        }
+
+        .top li:nth-child(3) a.nav-link {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .researching {
+            display: flex;
+            gap: 20px;
+            background-color: #575364;
+        }
+
+        .researching p {
+            color: white;
+            transition: all 0.3s ease;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 1s forwards;
+            display: flex;
+            list-style: none;
+            margin-left: auto;
+            gap: 20px;
+            padding: 0;
+        }
+
+        .researching h1 {
+            transition: all 0.3s ease;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 1s forwards;
+            color: white;
+        }
+
+        .bg {
+            transition: all 0.3s ease;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 1s forwards;
+            filter: brightness(65%);
+        }
+
+        /* TEAM SECTION */
+        .team {
+            display: flex;
+            flex-direction: column;
+            /* title on top, members below */
+            align-items: center;
+            gap: 20px;
+            background-image: url('Screenshot 2026-01-12 142559.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            background-blend-mode: darken;
+            padding: 40px 0;
+            margin-top: 0;
+            padding-top: 20px;
+            transition: all 0.3s ease;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 0.5s forwards;
+        }
+
+        .team-members {
+            display: flex;
+            flex-direction: row;
+            /* all members in a row */
+            align-items: flex-start;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: nowrap;
+        }
+
+        .member,
+        .dry {
+            position: relative;
+            text-align: center;
+            display: inline-block;
+        }
+
+        /* Herobrine head overlay */
+        .dry .head {
+            position: absolute;
+            top: -0px;
+            /* adjust vertical offset */
+            left: 45%;
+            transform: translateX(-50%);
+            z-index: 2;
+            height: 60px;
+        }
+
+        .team h2 {
+            color: white;
+            text-align: center;
+            margin: 0 0 20px 0;
+        }
+
+        .team h3 {
+            color: white;
+            text-align: center;
+            margin: 0 0 20px 0;
+        }
+
+        .new {
+            transition: all 0.3s ease;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 0.5s forwards;
+            background: linear-gradient(to right, rgb(21, 0, 255), rgb(255, 0, 0));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .new h2,
+        .new h3 {
+            margin: 0 0 20px 0;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="top">
+        <a href="Index.html" class="herobrine">
+            <img src="offical.png" alt="Herobrine Logo">
+            <span> - H.I.C</span>
+        </a>
+        <ul>
+            <li><a href="Index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <footer class="researching">
+        <div class="title">
+            <h1>We've been researching since 2025.</h1>
+            <img src="Screenshot 2026-01-12 142559.png" height="100px" class="bg">
+        </div>
+        <article class="about">
+            <p>As early as 2025 we have been compiling compelling research to prove that herobrine is real. As by using
+                screenshots, research, proof, and other stuff to otherwise convince anyone reading it to just accept
+                "that herobrine is real.", please join and strengthen this community! help us.</p>
+            <p>Members and who does what is down below.</p>
+            <p>↓</p>
+        </article>
+    </footer>
+
+    <section class="team">
+        <h2>MEET THE TEAM!</h2>
+        <div class="team-members">
+            <a href="https://scratch.mit.edu/users/Dr_Rydon/" class="member">
+                <img src="https://herobrineinvestigationcommunity.my.canva.site/herobrine-investigation-community/_assets/media/c3210fa407ba4109516db78a883b89be.png"
+                    alt="Dr. Rydon" height="200px">
+                <h3>Dr. Rydon - Leader</h3>
+            </a>
+            <a href="https://scratch.mit.edu/users/AmeenaDaCoder/" class="member">
+                <img src="https://herobrineinvestigationcommunity.my.canva.site/herobrine-investigation-community/_assets/media/50c68e8771c3923a071a73d4a1490a5b.png"
+                    alt="AmeenaDaCoder" height="200px">
+                <h3>AmeenaDaCoder - Coder</h3>
+            </a>
+            <a href="https://scratch.mit.edu/users/blurry_memory/" class="member">
+                <img src="https://herobrineinvestigationcommunity.my.canva.site/herobrine-investigation-community/_assets/media/5df50116e5b50887488b71039bd3e9ec.png"
+                    alt="blurry_memory" height="200px">
+                <h3>blurry_memory - Co-Coder</h3>
+            </a>
+            <a href="Xminsterisback" class="dry">
+                <img src="https://herobrineinvestigationcommunity.my.canva.site/herobrine-investigation-community/_assets/media/cc74a62f00e8a80db1c1feec25187439.png"
+                    height="70px" class="head">
+                <img src="https://herobrineinvestigationcommunity.my.canva.site/herobrine-investigation-community/_assets/media/ad0789573ff8c38fc7bcb3603e46f3fb.png"
+                    height="200px">
+                <h3>Xminster - Researcher</h3>
+            </a>
+            <a href="https://scratch.mit.edu/users/Kats00155/" class="member">
+                <img src="https://herobrineinvestigationcommunity.my.canva.site/herobrine-investigation-community/_assets/media/702a81a9775bd59ec67b0d0b606fbe2b.png"
+                    alt="Kats00155" height="200px">
+                <h3>Kats00155 - Artist</h3>
+            </a>
+        </div>
+    </section>
+
+    <section class="new">
+        <h2>MEET OUR NEWEST MEMBER!</h2>
+        <a href="https://scratch.mit.edu/users/blurry_memory/" class="member">
+            <img src="https://herobrineinvestigationcommunity.my.canva.site/herobrine-investigation-community/_assets/media/5df50116e5b50887488b71039bd3e9ec.png"
+                alt="blurry_memory" height="200px">
+            <h3>blurry_memory - Co-Coder</h3>
+        </a>
+    </section>
+
+</body>
+
+</html>

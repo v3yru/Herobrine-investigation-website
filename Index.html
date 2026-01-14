@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H.I.C - Home</title>
+    <link rel="icon" href="offical.png" type="image/png">
+    <style>
+        /* Reset & body */
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'OCR A', monospace;
+            background-color: rgb(91, 101, 93);
+        }
+
+        /* Sticky Navbar */
+        .top {
+            position: sticky;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            height: 80px;
+            font-weight: 700;
+            background-color: #0B1F3F;
+        }
+
+        /* Herobrine logo + text */
+        .herobrine {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #ffffff;
+            animation: none;
+            opacity: 1;
+            transform: none;
+            text-shadow: 1px 1px 2px #000000;
+        }
+
+        .herobrine img {
+            height: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .herobrine img:hover {
+            filter: brightness(100%);
+            height: 55px;
+        }
+
+        .top ul {
+            display: flex;
+            list-style: none;
+            margin-left: auto;
+            gap: 20px;
+            padding: 0;
+        }
+
+        .top a.nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px #000000;
+            transition: all 0.3s ease;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 0.8s forwards;
+        }
+
+        .top a.nav-link:hover {
+            color: #000000;
+            text-shadow: 2px 2px 10px #ffffff;
+            transform: translateY(0) scale(1.1);
+        }
+
+        /* Animation delays for links */
+        .top li:nth-child(1) a.nav-link {
+            animation-delay: 0.2s;
+        }
+
+        .top li:nth-child(2) a.nav-link {
+            animation-delay: 0.4s;
+        }
+
+        .top li:nth-child(3) a.nav-link {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Notice bar */
+        .notice {
+            width: 100%;
+            background-color: #A78D4F;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 0;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+            gap: 30px;
+            transition: all 0.3s ease;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 0.5s forwards;
+        }
+
+        .notice p {
+            margin: 0;
+            color: black;
+            font-weight: bold;
+            text-align: center;
+            animation: none;
+            opacity: 1;
+            transform: none;
+        }
+
+        /* Main content wrapper */
+        main {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0px;
+            padding: 0px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 0.5s forwards;
+        }
+
+        .introduction {
+            margin-right: auto;
+            background-color: #6B5B95;
+            display: flex;
+            align-items: row;
+            transition: all 0.3s ease;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 0.5s forwards;
+        }
+
+        .introduction p {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            animation: none;
+            opacity: 1;
+            transform: none;
+        }
+
+        .about {
+            background-color: #575364;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 0.5s forwards;
+        }
+
+        .join {
+            color: #DADADA;
+            text-decoration: none;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px #B48C68;
+            transition: all 0.3s ease;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 0.5s forwards;
+        }
+
+        .join:hover {
+            color: #DADADA;
+            text-shadow: 2px 2px 10px #DADADA;
+            transform: translateY(0) scale(1.1);
+        }
+
+        .slideshow {
+            transition: all 0.3s ease;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 0.5s forwards;
+            display: flex;
+            gap: 20px;
+            align-self: center;
+        }
+
+        .proof {
+            transition: all 0.3s ease;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 0.5s forwards;
+            display: flex;
+            align-items: row;
+            gap: 20px;
+            align-self: center;
+        }
+
+        .proof img {
+            transition: all 0.3s ease;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 0.5s forwards;
+            border-color: solid 15px white;
+        }
+
+        .proof button {
+            transition: all 0.3s ease;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 0.5s forwards;
+            border-color: solid 10px rgb(4, 62, 4);
+            background-color: rgb(151, 151, 151);
+            font-family: 'OCR A', monospace;
+            text-decoration: none;
+            font-weight: 700;
+            color: black;
+        }
+
+        .proof button:hover {
+            border-color: solid 10px greenyellow;
+            background-color: black;
+            font-family: 'OCR A', monospace;
+            text-decoration: none;
+            font-weight: 700;
+            color: rgb(151, 151, 151);
+        }
+
+        .container {
+            transition: all 0.3s ease;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 0.5s forwards;
+            display: flex;
+            align-items: row;
+            gap: 20px;
+            align-self: center;
+        }
+
+        .navs {
+            transition: all 0.3s ease;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 0.5s forwards;
+            display: flex;
+            align-items: column;
+            gap: 20px;
+            align-self: center;
+        }
+
+        .bg {
+            filter: brightness(65%);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="top">
+        <a href="Index.html" class="herobrine">
+            <img src="offical.png" alt="Herobrine Logo">
+            <span> - H.I.C</span>
+        </a>
+        <ul>
+            <li><a href="Index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <main>
+        <aside class="notice">
+            <img src="offical.png" height="80px">
+            <img src="pngtree-warning-sign-in-yellow-triangle-shape-png-image_9013225.png" alt="Warning" height="80px">
+            <p>NOTICE: WE MIGHT MOVE TO A DIFFERENT ADDRESS IN THE FUTURE, JUST LETTING YOU KNOW.</p>
+            <img src="pngtree-warning-sign-in-yellow-triangle-shape-png-image_9013225.png" alt="Warning" height="80px">
+            <img src="offical.png" height="80px">
+        </aside>
+
+        <article class="introduction">
+            <img src="">
+            <img src="Screenshot 2026-01-12 142559.png" alt="Important Image" height="300px" class="bg">
+            <article class="about">
+                <p class="title">The Herobrine Investigation Community otherwise H.I.C:</p>
+                <p>The H.I.V is a community all dedicated to researching, gathering evidence, and presenting the idea
+                    that Herobrine is real. And we should wake up, all around the community here is very welcoming and
+                    we'll accept anyone to join our community. We gather compelling research with Xmister being the lead
+                    researcher, Kats00155 cleaning his thoughts into art, AmeenaDaCoder making websites to gather more
+                    members, and the leader of it all Gammon_02. If you want to help us and make us stronger, consider
+                    joining!</p>
+                <nav class="navs">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_LdFZ60NfuyRzE4jOaBNJqy9hKlj_Bdwb1zG6KI5e4D8FAQ/viewform?pli=1&pli=1"
+                        class="join">Join now →</a>
+                    <a href="https://scratch.mit.edu/studios/51218455" class="join">Our studio →</a>
+                </nav>
+            </article>
+        </article>
+
+        <aside class="container">
+            <div class="Seed">
+                <p style="color: #292929;">The seed where the original screenshot took place:</p>
+                <img src="seed.png.png" height="200px" width="300px">
+            </div>
+
+            <div class="slideshow">
+                <p style="color: #292929;">Proof with screenshots: </p>
+                <div class="proof">
+                    <button onclick="Previous()" id="p">Previous</button>
+                    <img src="Screenshot 2026-01-12 172902.png" height="200px" id="first">
+                    <img src="Screenshot 2026-01-12 173627.png" height="200px" id="second">
+                    <img src="Screenshot 2026-01-12 173959.png" height="200px" id="third">
+                    <button onclick="Next()" id="n">Next</button>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <script>
+        const f = document.getElementById("first");
+        const s = document.getElementById("second");
+        const t = document.getElementById("third");
+        const p = document.getElementById("p");
+        const n = document.getElementById("n");
+        let next;
+
+        window.addEventListener("load", () => {
+            f.style.display = "block";
+            s.style.display = "none";
+            t.style.display = "none";
+            p.style.display = "none";
+            n.style.display = "block";
+            next = "first";
+        });
+
+        function Next() {
+            if (next === "first") {
+                f.style.display = "none";
+                s.style.display = "block";
+                t.style.display = "none";
+                p.style.display = "block"
+                n.style.display = "block";
+                next = "second";
+            } else if (next === "second") {
+                f.style.display = "none";
+                s.style.display = "none";
+                t.style.display = "block";
+                p.style.display = "block";
+                n.style.display = "block";
+                next = "third";
+            } else if (next === "third") {
+                f.style.display = "block";
+                s.style.display = "none";
+                t.style.display = "none";
+                p.style.display = "block"
+                n.style.display = "block";
+                next = "first";
+            }
+        }
+
+        function Previous() {
+            if (next === "first") {
+                f.style.display = "none";
+                s.style.display = "none";
+                t.style.display = "block";
+                p.style.display = "block";
+                n.style.display = "block";
+                next = "third";
+            } else if (next === "second") {
+                f.style.display = "block";
+                s.style.display = "none";
+                t.style.display = "none";
+                p.style.display = "block"
+                n.style.display = "block";
+                next = "first";
+            } else if (next === "third") {
+                f.style.display = "none";
+                s.style.display = "block";
+                t.style.display = "none";
+                p.style.display = "block"
+                n.style.display = "block";
+                next = "second";
+            }
+        }
+    </script>
+</body>
+
+</html>
